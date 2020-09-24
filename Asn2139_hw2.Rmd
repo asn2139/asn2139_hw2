@@ -17,21 +17,22 @@ Importing Dataset
 trash_df=
   read_xlsx(
     "./data/Trash-Wheel-Collection-Totals-8-6-19.xlsx",
-  sheet="Mr.Trash Wheel",
-  range=cell_cols("A:N") %>% 
-    janitor::clean_names() %>% 
-    drop_na(dumpster) %>% 
+  sheet="Mr. Trash Wheel",
+  range=cell_cols("A:N"))
+
+    trash_df2= 
+      janitor::clean_names (trash_df) %>% 
+     drop_na(dumpster) %>% 
     mutate(
       sports_balls= round(sports_balls),
       sports_balls= as.integer(sports_balls)
     )
   
-  )
 ```
 
 
 ```{r}
-print(trash_df)
+print(trash_df2)
 ```
 
 
