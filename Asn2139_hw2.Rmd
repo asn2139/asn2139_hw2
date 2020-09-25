@@ -71,3 +71,4 @@ This dataset contains information from the Mr. Trashwheel trash collector in Bal
 * The median number of sports balls found in a dumpster in 2017 was `r trash_df %>% filter(year == 2017) %>% pull(sports_balls) %>% median()`
 * The total precipitation in 2018 was `r precip_df %>% filter(year == 2018) %>% pull(total) %>% sum()` inches.
 
+## Problem 2
