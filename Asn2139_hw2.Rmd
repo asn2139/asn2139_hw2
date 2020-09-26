@@ -72,3 +72,14 @@ This dataset contains information from the Mr. Trashwheel trash collector in Bal
 * The total precipitation in 2018 was `r precip_df %>% filter(year == 2018) %>% pull(total) %>% sum()` inches.
 
 ## Problem 2
+
+```{r}
+
+transit_df=
+  read_csv("./data/NYC_Transit_Subway_Entrance_And_Exit_Data.csv") %>% 
+  janitor::clean_names() %>% 
+  select (transit_df, line, station, name, station latitude, station longitude, routes served, entry, vending, entrance type, ADA compliance)
+  
+
+```
+
