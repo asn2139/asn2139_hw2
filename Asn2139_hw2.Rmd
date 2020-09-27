@@ -74,12 +74,12 @@ This dataset contains information from the Mr. Trashwheel trash collector in Bal
 ## Problem 2
 
 ```{r}
-
-transit_df=
+  transit_df=
   read_csv("./data/NYC_Transit_Subway_Entrance_And_Exit_Data.csv") %>% 
   janitor::clean_names() %>% 
-  select (transit_df, line, station, name, station latitude, station longitude, routes served, entry, vending, entrance type, ADA compliance)
+  select (line, station_name, station_latitude, station_longitude, starts_with("route"), entry, vending, entrance_type, ada) %>% 
+  as.logical("entry")
   
-
+  
 ```
 
